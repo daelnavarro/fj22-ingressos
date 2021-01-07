@@ -56,7 +56,5 @@ public class SessaoForm {
 	public void setFilmeId(Integer filmeId) {
 		this.filmeId = filmeId;
 	}
-	
-	
 
 }
