@@ -83,7 +83,7 @@ public class Sala {
     }
 
     public Integer lugar(String fileira, Integer posicao){
-        Optional<Lugar> optional = this.lugares.stream().filter((x) -> fileira.equals(x.getFileira()) && posicao.equals(x.getPosicao())).findFirst();
+        Optional<Lugar> optional = this.lugares.stream().filter(x -> fileira.equals(x.getFileira()) && posicao.equals(x.getPosicao())).findFirst();
         return optional.get().getId();
     }
 }
