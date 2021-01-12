@@ -36,7 +36,7 @@ public class Sala {
 
     public Sala(String nome) {
         this.nome = nome;
-    }
+    } 
 
     public BigDecimal getPreco() {
 		return preco.setScale(2, RoundingMode.HALF_UP);
