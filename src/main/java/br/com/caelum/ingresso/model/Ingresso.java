@@ -10,6 +10,11 @@ public class Ingresso {
 	private BigDecimal preco;
 	
 	
+	
+	public Ingresso() {
+		
+	}
+	
 	public Ingresso(Sessao sessao, Desconto tipoDeDesconto) {
 		this.sessao = sessao;
 		this.preco = tipoDeDesconto.aplicarDescontoSobre(sessao.getPreco());
@@ -22,4 +27,14 @@ public class Ingresso {
 	public void setPreco(BigDecimal preco) {
 		this.preco = preco;
 	}
+
+	public Sessao getSessao() {
+		return sessao;
+	}
+
+	public void setSessao(Sessao sessao) {
+		this.sessao = sessao;
+	}
+	
+	
 }
