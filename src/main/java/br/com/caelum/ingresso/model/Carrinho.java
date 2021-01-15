@@ -1,5 +1,7 @@
 package br.com.caelum.ingresso.model;
 
+import java.math.BigDecimal;
+import java.time.YearMonth;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,6 +26,20 @@ public class Carrinho {
 		this.ingressos = ingressos;
 	}
 	
+	public boolean isSelecionado(Lugar lugar) {
+		return ingressos.stream().map(Ingresso::getLugar).anyMatch(lugarDoIngresso -> lugarDoIngresso.equals(lugar));
+	}
 	
+	public BigDecimal getTotal() {
+		return ingressos.stream().map(Ingresso::getPreco).reduce(BigDecimal::add).orElse(BigDecimal.ZERO);
+	}
+	
+	public Compra toCompra() {
+		return new Compra(ingressos);
+	}
+	
+	public void limpa() {
+		this.ingressos.clear();
+	}
 
 }
